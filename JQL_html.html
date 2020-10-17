@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <!--<title> tag is required in all HTML documents and it defines the title of the document-->
+  	<title>JQL_HTML</title> 
+
+  	<!--<meta> tags always go inside the <head> element,typically used to specify character set, page description, keywords, author of the document, and viewport settings,will not be displayed on the page, but is machine parsable.--> 
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  		    
+  	<!--<style> tag syntax: <tagname style="property:value;">-->
+  	<!--translate(length,length),translate(length),translate(percentage,percentage),translate(percentage) CSS function repositions an element in the horizontal and/or vertical directions-->
+  	<style>
+    	.c1 {position:relative; text-align:center; color:white;}
+    	.topleft {position: absolute; top:15px; left:320px;}
+    	.topright {position: absolute; top:15px; right:320px;}
+    	.bottomleft {position: absolute; bottom: 15px; left:320px;}
+    	.bottomright {position: absolute; bottom:15px; right: 320px;}
+    	.center {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+  	  p {color:black;} 
+  	  p.ex1 {font-size: 35px;} 
+  	  article {color: yellow;}
+  	  thead{color: green;}
+  	  tbody{color: yellow;}
+  	  tfoot{color: pink;}
+  	  table,th,td {border: 1px dotted grey; border-radius: 5px;}
+  	  h1 {color:blue;} h2{color: red;}
+  	  body {color:purple;} p.ex1 {font-size: 35px;}     
+  	</style>
+  </head>
+  
+  <!--two display values are: block and inline-->
+  <body style="background-image: url(image/heaven_edge.jpg);">
+    <!--<dl> tag defines a description list, is used in conjunction with <dt> (defines terms/names) and <dd> (describes each term/name).-->
+    <div class="block_inline">
+      <dl style="font-size: 30px;color: pink;">
+        <dt>Block level elements:</dt>
+        <dd>
+          <!--<select> element is used to create a drop-down list, it is a form control and can be used in a form to collect user input.-->
+          <!--<option> tags inside the <select> element define the available options in the list.-->
+          <label for="block elements" style="color: white;font-size: 19px;">preview it</label>
+          <select id="block elements">
+            <option>address</option>
+            <option>article</option>
+            <option>aside</option>
+            <option>blockquote</option>
+            <option>canvas</option>
+            <option>dd</option>
+            <option>div</option>
+            <option>dl</option>
+            <option>dt</option>
+            <option>filedset</option>
+            <option>figcaption</option>
+            <option>figure</option>
+            <option>footer</option>
+            <option>form</option>
+            <option>h1-h6</option>
+            <option>header</option>
+            <option>hr</option>
+            <option>li</option>
+            <option>main</option>
+            <option>nav</option>
+            <option>noscript</option>
+            <option>ol</option>
+            <option>p</option>
+            <option>pre</option>
+            <option>section</option>
+            <option>table</option>
+            <option>tfoot</option>
+            <option>ul</option>
+            <option>video</option>
+          </select>
+        </dd>
+        <dt>Inline level elements:</dt>
+        <dd>
+          <select id="inline elements">
+            <option>a</option>
+            <option>abbr</option>
+            <option>acronym</option>
+            <option>b</option>
+            <option>bdo</option>
+            <option>big</option>
+            <option>br</option>
+            <option>button</option>
+            <option>cite</option>
+            <option>code</option>
+            <option>dfn</option>
+            <option>em</option>
+            <option>i</option>
+            <option>img</option>
+            <option>input</option>
+            <option>kbd</option>
+            <option>label</option>
+            <option>map</option>
+            <option>object</option>
+            <option>output</option>
+            <option>q</option>
+            <option>samp</option>
+            <option>script</option>
+            <option>select</option>
+            <option>small</option>
+            <option>span</option>
+            <option>strong</option>
+            <option>sub</option>
+            <option>sup</option>
+            <option>textarea</option>
+            <option>time</option>
+            <option>tt</option>
+            <option>var</option>
+          </select>
+      </dl>
+    </div>
+    <div id="input_type" style="font-size: 20px;"><b>label tag defines a label for several elements</b><br>
+      <label for="input_type">input type</label>
+      <select>
+        <option>color</option>
+        <option>date</option>
+        <option>datetime-local</option>
+        <option>email</option>
+        <option>file</option>
+        <option>month</option>
+        <option>number</option>
+        <option>password</option>
+        <option>radio</option>
+        <option>range</option>
+        <option>search</option>
+        <option>tel</option>
+        <option>text</option>
+        <option>time</option>
+        <option>url</option>
+      </select>
+      and meter tag,progress tag,select tag,textarea tag.
+      <p>"for" attribute in label element = "id" attribute in related elements</p>
+    </div>
+    
+    <div id="form_info">
+      <!--<form> element defines a form that is used to collect user input-->
+      <form>
+        <!--<fieldset> tag is used to group related elements in a form,draws a box around the related elements-->
+        <fieldset style="border: 8px groove;color: white;">
+          <legend>Info</legend>
+          <label for="yname">Your name</label>
+          <!--<input> element is the most important form element.displayed in several ways, depending on the type attribute:text,radio,submit-->
+          <input type="text" name="fname"><br><br>
+          <label for="email">Email</label>
+          <input type="email" name="email"><br><br>
+          <label for="birthday">Birthday</label>
+          <input type="date" name="birthday"><br><br>
+          <input type="submit" value="submit">
+        </fieldset>
+      </form>
+    </div>
+    
+    <div id="display_time">
+      <button type="button" onclick="document.getElementById('demo').innerHTML = Date()" style="font-size: 35px;">show Time</button>
+      <p id="demo" style="font-size: 40px;color: yellow;"></p>
+    </div>
+    <!-- text formatting:<b> bold text,<strong> important text,<i> italic text,<em> emphasized text,<mark> marked text,<small> samll text,<del> deleted text,<ins> inserted text,<sub> subscript text,<sup> superscript text-->
+    <section style="color: pink; font-size:40px; text-align: center;">
+      <i>long-term </i><em>可循环 </em><mark>音乐</mark><sub>light </sub><b>music </b><sup>JQL </sup><strong>2020/04/24</strong><br>
+      <p>这一生关于你的风景
+        <audio controls loop>
+        <source src="music/zheyishengguanyunidefengjing.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      
+      <p>我的楼兰
+        <audio controls loop>
+        <source src="music/wodeloulan.mp3" type="audio/mpeg">   	
+        </audio>
+      </p>
+      <p>无期
+        <audio controls loop>
+        <source src="music/wuqi.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>你的答案
+        <audio controls loop>
+        <source src="music/nidedaan.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>少年
+        <audio controls loop>
+        <source src="music/shaonian.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>印第安之歌
+        <audio controls loop>
+        <source src="music/indiansongs.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>给所有知道我名字的人
+        <audio controls loop>
+        <source src="music/geisuoyouzhidaowomingzideren.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>永夜
+        <audio controls loop>
+        <source src="music/yongye.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      
+      <p>two steps from hell
+        <audio controls loop>
+        <source src="music/twostepsfromhell.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>左手指月
+        <audio controls loop>
+        <source src="music/zuoshouzhiyue.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      
+      <p>幻昼
+        <audio controls loop>
+        <source src="music/huanzhou.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+      <p>世界那么大还是遇见你
+        <audio controls loop>
+        <source src="music/shijienamedahaishiyujianni.mp3" type="audio/mpeg">     
+        </audio>
+      </p>
+    </setion>
+    <!--<article> tag specifies independent, self-contained content-->
+    <article>
+      <!--<header> element represents a container for introductory content or a set of navigational links,A <header> element typically contains:one or more heading elements,logo or icon,authorship information-->
+      <header>
+        <!--<a> tag defines hyperlinks:<a href="url">link text</a>-->
+        <p style="text-align: center;"><button style="background-color:red;"><a href = "https://www.w3schools.com/cssref/playit.asp?filename=playcss_text-shadow" style="font-size: 40px;color: white;">text-shadow property</a></button></p>
+        <h1 style="font-size: 35px; text-shadow: 10px 10px grey; text-align: center;">HTML BEGINNER</h1>
+        <h2><a href="https://www.w3schools.com/html/default.asp">Html Home</a></h2>
+        <h2><a href="https://www.w3schools.com/tags/default.asp" style="color:orange;">Html tag</a></h2>
+        <h4><a href = "https://www.w3schools.com/html/html_examples.asp" style="font-size: 30px; color: black"><b>Html examples</b></a></h4>
+      </header>
+
+      <div id="table1" style="table-layout: auto;">
+        <!--<table> tag defines an HTML table,<tr> element defines a table row, the <th> element defines a table header, and the <td> element defines a table cell.-->
+        <table style="text-align: center; font-size: 20px;">
+          <!--<caption> tag defines a table caption, must be inserted immediately after the <table> tag.-->
+          <caption style="font-size: 30px;"> Weekly Weather</caption>
+          <!--table with a <thead>, <tbody>, and a <tfoot> element-->
+          <thead>
+            <tr>
+              <th>MONDAY</th>
+              <th>TUESDAY</th>
+              <th>WEDSDAY</th>
+              <th>THURSDAY</th>
+              <th>FRIDAY</th>
+              <th>SATURDAY</th>
+              <th>SUNDAY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label for="weather">weather</label>
+                <select>
+                  <option>Sunny</option>
+                  <option>Cloudy</option>
+                  <option>Windy</option>
+                  <option>Rainy</option>
+                </select>
+              </td>
+              <td>
+                <label for="weather">weather</label>
+                  <select>
+                    <option>Sunny</option>
+                    <option>Cloudy</option>
+                    <option>Windy</option>
+                    <option>Rainy</option>
+                  </select>
+              </td>
+              <td>
+                <label for="weather">weather</label>
+                  <select>
+                    <option>Sunny</option>
+                    <option>Cloudy</option>
+                    <option>Windy</option>
+                    <option>Rainy</option>
+                  </select>
+              </td>
+              <td>
+                <label for="weather">weather</label>
+                  <select>
+                    <option>Sunny</option>
+                    <option>Cloudy</option>
+                    <option>Windy</option>
+                    <option>Rainy</option>
+                  </select>
+              </td>
+              <td>
+                <label for="weather">weather</label>
+                  <select>
+                    <option>Sunny</option>
+                    <option>Cloudy</option>
+                    <option>Windy</option>
+                    <option>Rainy</option>
+                  </select>
+              </td>
+              <td>
+                <label for="weather">weather</label>
+                  <select>
+                    <option>Sunny</option>
+                    <option>Cloudy</option>
+                    <option>Windy</option>
+                    <option>Rainy</option>
+                  </select>
+              </td>
+              <td>
+                <label for="weather">weather</label>
+                  <select>
+                    <option>Sunny</option>
+                    <option>Cloudy</option>
+                    <option>Windy</option>
+                    <option>Rainy</option>
+                  </select>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+              <td>
+                <label for="value">value</label>
+                <select>
+                  <option>True</option>
+                  <option>False</option>
+                </select>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <!--<q> element defines a short quotation-->
+      <div class="ex1">
+        <p><q>html structure</q>
+          <label for="html_structure"></label>
+          <select>
+            <option>head</option>
+            <option>body</option>
+          </select>
+          <scan>head include:
+            <label for="head_include"></label>
+            <select>
+              <option>title</option>
+              <option>style</option>
+              <option>meta</option>
+            </select>
+          </scan>
+          <scan>body include:
+            <label for="body_include"></label>
+            <select>
+              <option>heading</option>
+              <option>article</option>
+              <option>section</option>
+              <option>aside</option>
+              <option>footer</option>
+            </select>
+          </scan>
+          <scan>article/section include:
+            <label for="article/section_include"></label>
+            <select>
+              <option>p</option>
+              <option>script</option>
+              <option>list</option>
+              <option>form</option>
+              <option>table</option>
+            </select>
+          </scan>
+          <scan>you also can decorate your web with link/botton/image/video/audio/etc tag</scan>
+        </p>
+      </div>
+
+      <!--<button> tag defines a clickable button,you can put content, like text or images-->
+      <!--An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.-->
+      <!-- -->
+      <ul>
+        <li><button><a href="https://bibleread.online/bible/">Go</a> next</button></li> 
+        <li><button type="button" onclick="alert('you are the best one today')">Surprice!</button></li>
+        <li><button name="ME">Only clickable</button></li>
+        <li><button><a href="http://www.renren.com/266707069/profile"><img src="image/me.png" alt="myself" width="20" height="20"></a></button></li>   
+      </ul>
+
+      <ul style="text-align: center;">
+        <li>
+          <!--<img> tag is empty, it contains attributes only, and does not have a closing tag.src attribute specifies the URL (web address) of the image-->
+          <img src="image/julian1.jpeg" alt="julian1" width="300" height="600" usemap="#julian1">
+          <div class="center">Julian1</div>
+          <map name="julian1">
+          <!--The <area> tag defines an area inside an image-map (an image-map is an image with clickable areas).-->
+            <area shape = "rect" coords="0,0,300,600" href="" alt="julian1">
+          </map>
+        </li>  
+
+        <li>
+          <!--usemap value starts with a hash tag # followed by the name of the image map, and is used to create a relationship between the image and the image map.-->
+          <img src="image/julian2.jpeg" alt="julian2" width="330" height="600" usemap="#julian2">
+          <div class="center">Julian2</div>
+          <!--<map>tag defines an image-map with clickable areas.-->
+          <map name="julian2">
+            <area shape = "rect" coords="0,0,330,600" href="" alt="julian2">
+          </map>
+        </li>
+      </ul>
+
+      <!--An ordered list starts with the <ol> tag. Each list item starts with the <li> tag.-->
+      <ol>
+        <li>
+          <!--<div> element is very often used together with CSS, to layout a web page.-->
+          <!--<div style="background-color: lightblue;">-->
+          <!--<div style="background-image: url(image/sky.jpeg);">-->
+          <div class="c1">
+            <img src="image/qingyou2.png" alt="qingyou" width="400" height="600" usemap="#qingyou">
+            <div class="center">qingyou2</div>
+            <map name="qingyou2">
+              <area shape="rect" coords="0,0,400,600" href="" alt="qingyou">
+           </map>
+          </div>
+        </li>
+
+        <li>
+          <div class="c1">
+            <img src="image/yanmoge2.png" alt="yanmoge" width="440" height="600" usemap="#yanmoge">
+            <map name="yanmoge">
+              <area shape="rect" coords="0,0,440,600" href="http://m.kuman55.com/14387/614192.html" alt="yanmoge">
+              <div class="center">yanmoge2</div>
+            </map>
+          </div>
+        </li>
+      </ol>
+
+      <!--<br> tag inserts a single line break, an empty tag which means that it has no end tag.-->
+      <p style="font-size: 30px;">Sometimes our life get a break here.<br>that means we need to be ready for next journey</p>
+
+      <p>the abbreviation of The People's Republic of China is <abbr title="The People's Republic of China" style="color: red; font-size: 40px;">PRC</abbr></p>
+      
+      <p style="text-align: center;">
+        <img src="image/china.jpg" alt="china-map" width="500" height="500" usemap="#chinamap">
+        <map name = "chinamap">
+          <area shape="circle" coords="380,190,10" href="https://en.wikipedia.org/wiki/Beijing" hreflang="English" alt="Beijing" >
+          <area shape="circle" coords="340,360,20" href="https://www.youtube.com/watch?v=ZFlWKKoPbd4" hreflang="Mandarin" alt="湖南">
+        </map>
+      </p>
+
+    </article>
+
+    <!--<hr> tag defines a thematic break in an HTML page (e.g. a shift of topic).-->
+    <hr>
+
+    <article>
+      <!--<nav> tag defines a set of navigation links.-->
+      <nav style="font-size:30px;">
+        <a href="https://wiki.python.org/moin/PythonEditors">Python Editor:</a>
+        <a href="https://www.jetbrains.com/pycharm/" style="color:pink;">PyCharm</a>
+        <a href="https://www.sublimetext.com/">Sublim Text</a>
+        <a href="https://www.spyder-ide.org/">Spyder</a>
+        <a href="https://developer.apple.com/xcode/features/">Xcode</a>
+        <a href="https://ipython.org/">IPython</a>
+        <a href="https://www.eclipse.org/">Eclipse</a>
+        <a href="https://wiki.python.org/moin/PyDev">PyDev</a>
+        <!--open source web application -->
+        <a href="https://jupyter.org/">Jupiter notebook</a>
+      </nav>
+    </article>
+
+    <hr>
+
+      <ul>
+    	  <li>user Ana: 60 times</li>
+        <!--<bdi> tag isolates a part of text that might be formatted in a different direction from other text outside it.-->
+    	  <li>user <bdi>إيان</bdi>: 90 times</li>
+    	  <li>user 亮: 100 times</li>
+      </ul>
+    
+
+    <p>this quotes from biblereadonline web
+      <!--<blockquote> tag specifies a section that is quoted from another source-->
+      <blockquote cite="https://bibleread.online/all-books-by-Watchman-Nee-and-Witness-Lee/book-abiding-in-the-lord-to-enjoy-his-life-Witness-Lee-read-online/">
+    	This book is a translation of messages given by Brother Witness Lee in the Chinese-speaking meetings in Anaheim, California on the Lord’s Days from October 9 through November 20, 1983.
+      </blockquote>
+    </p>
+    
+    <!--<canvas> tag is used to draw graphics,on the fly(OTF),it's only a container for graphics, you must use a script to actually draw the graphics.-->
+    <!--canvas has several methods for drawing-->
+    <p>if you want know more color picker, you can 
+      <button><a href="https://www.w3schools.com/colors/colors_picker.asp?color=009E73">click here</a></button><br>if you are confused about ctx method,please
+      <button><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/canvas">click here</a></button>
+    </p>
+    
+    <!--draw a line in a rect-->  
+    <canvas id="mycanvas" width="50" height="50" style="border: 3px solid #CCFFF1"></canvas>
+    <!--ctx.moveTo(x, y),begins a new sub-path at the point specified by the given (x, y) coordinates
+      ctx.lineTo(x, y), adds a straight line to the current sub-path by connecting the sub-path's last point to the specified (x, y) coordinates-->
+    <script type="text/javascript">
+      var c = document.getElementById("mycanvas");
+      var ctx = c.getContext("2d");
+      ctx.moveTo(2,4);
+      ctx.lineTo(30,60);
+      ctx.stroke();
+    </script>
+    
+    <!--draw a circle-->
+    <canvas id="mycanvas1" width="50" height="50" style="border: 5px solid #CCFFF1"></canvas>
+    <!--ctx.arc(x, y, radius, startAngle, endAngle,'anticlockwise')-->
+    <!--ctx.beginPath(),starts a new path by emptying the list of sub-paths. Call this method when you want to create a new path.-->
+    <script>
+      var c = document.getElementById("mycanvas1");
+      var ctx = c.getContext('2d');
+      ctx.beginPath(); 
+      ctx.arc(20,20,10,90,2*Math.PI);
+      ctx.stroke();
+    </script>
+    <!--draw a rectangle-->
+    <canvas id="mycanvas2" width="50" height="50" style="border: 2px solid #FFBD33"></canvas>
+    <!--ctx.fillRect(x, y, width, height)-->
+    <script>
+    	var canvas = document.getElementById('mycanvas2');
+    	var ctx = canvas.getContext("2d");
+    	ctx.fillStyle = "tomato";
+      ctx.fillText("Hi youtube",1,40,'50');
+    	ctx.fillRect(0,0,30,30);
+    </script>
+
+    <!-- draw a text-->
+    <canvas id="mycanvas3" width="80" height="70" style="border: 1px solid #FF5733"></canvas>
+    <!--fillText(text, x, y, 'maxWidth')-->
+    <script>
+      var c =document.getElementById('mycanvas3');
+      var ctx=c.getContext('2d');
+      ctx.fillStyle="violet";
+      ctx.fillText('Today is Sunny',3,30,'60');
+    </script>
+
+    <!--draw a stroketext-->
+    <canvas id="mycanvas4" width="1000" height="80" style="border: 1px solid #FF5733"></canvas>
+    <script>
+      var c =document.getElementById('mycanvas4');
+      var ctx=c.getContext('2d');
+      ctx.font = "18px Arial";
+      ctx.fillText("2020-04-22",3,20);
+    </script>
+    
+    <!--draw linear gradient-->
+    <canvas id="mycanvas5" width="200" height="200" style="border: 2px solid #FFBD33"></canvas>
+    <!--ctx.createLinearGradient(x0, y0, x1, y1),specified by four parameters defining the start and end points of the gradient line
+    grd.addColorStop()-->
+    <script>
+      var canvas = document.getElementById('mycanvas5');
+      var ctx = canvas.getContext("2d");
+      var grd = ctx.createLinearGradient(0,0,200,200);
+      grd.addColorStop(0.1,"red");
+      grd.addColorStop(0.5,"green");
+      grd.addColorStop(0.7,"blue");
+      grd.addColorStop(1.0,'yellow');
+      
+      ctx.fillStyle=grd;
+      ctx.fillRect(10,10,180,170);
+    </script>
+
+    <!--draw circular gradient-->
+    <canvas id="mycanvas6" width="200" height="200" style="border: 1px solid #FF5733"></canvas>
+    <!--ctx.createRadialGradient(x0, y0, r0, x1, y1, r1),specified by six parameters, three defining the gradient's start circle, and three defining the end circle.-->
+    <script>
+      var c =document.getElementById('mycanvas6');
+      var ctx=c.getContext('2d');
+      var grd = ctx.createRadialGradient(50,50,60,100,100,50);
+      grd.addColorStop(0.1,"red");
+      grd.addColorStop(0.5,"green");
+      grd.addColorStop(0.7,"blue");
+      grd.addColorStop(1.0,'yellow');
+     
+      ctx.fillStyle=grd;
+      ctx.fillRect(0,0,200,200);
+    </script>
+
+    <!--draw Image & text on image-->
+    <p class="ex1">Original Photo</p>
+    
+    <div class="c1">
+      <img id="m" src="image/me.png" alt="myself" width="600" height="450" >
+
+      <div class="topleft">Top Left</div>
+      <div class="topright">Top Right</div>
+      <div class="bottomleft">Bottom Left</div>
+      <div class="bottomright">Bottom Right</div>
+      <div class="center">Center</div>
+
+    </div>
+    <p class="ex1">Draw Me!</p>
+    <!--ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);provides different ways to draw an image onto the canvas-->
+    <canvas id="mycanvas7" width="500" height="400" style="border: 1px solid #d3d3d3"></canvas>
+    
+    <script>
+      function myCanvas() {
+        var c = document.getElementById('mycanvas7');
+        var ctx = c.getContext('2d');
+        var img = document.getElementById('m');
+        ctx.drawImage(img,0,0,500,400);
+      }    
+    </script>
+    <p><button onclick="myCanvas()">Draw Me!</button></p>
+
+    <!--<bdo> tag is used to override the current text direction-->
+    <p>show you some cool thing: <bdo dir="rtl"> this gonna reverse</bdo></p>
+
+    <!--embed a video-->
+    <video width="400" height="270" controls loop>
+      <source src="video/yangu.mp4" type="video/mp4">
+    </video>
+    
+    <!--<figure> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc-->
+    <!--<figcaption> tag defines a caption for a <figure> element,can be placed as the first or last child of the <figure> element-->
+    <figure>
+      <!--find web image src through inspect -->
+      <img src="https://cdn10.bostonmagazine.com/wp-content/uploads/sites/2/2019/09/goat-hyde-park-t.jpg" style="width: 400px; height: 280px;">
+      <figcaption>F1-one goat</figcaption>
+    </figure>
+
+    <!--<pre> element is displayed in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.-->
+    <pre>
+       if   
+          more
+              love
+                 shared
+                       ,
+                         more
+                             beautiful 
+                                      in 
+                                        the 
+                                           world
+    </pre>
+
+    <!--<address> tag defines the contact information for the author/owner of a document or an article-->
+    <address style="font-size: 25px;"> Author :JQL<br> Date:2020-04-21<br> Weather:Sunny</address>
+
+    <!--<footer> tag defines a footer for a document or section,typically contains:authorship information,copyright information,contact information,sitemap,back to top links,related documents.can have several <footer> elements in one document-->
+    <footer style="font-size: 20px;">Last Modified date:2020-04-26</footer>
+  
+  </body>
+
+</html>
